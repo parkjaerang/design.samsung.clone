@@ -20,37 +20,44 @@
         src: local('Samsung Sharp Sans Regular'), url('./font/samsungsharpsans-bold.woff') format('woff');
     }
 
-    /* 기본 설정 */
+    /* default */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-
+    
     ul {
         list-style: none;
         color: inherit;
     }
-
+    
     a {
         text-decoration: none;
         color: inherit;
     }
-
+    
     html {
         font-size: 62.5%;
         font-family: 'Samsung Sharp Sans';
+        
     }
-
+    
     body.no-scroll {
         overflow: hidden;
         height: 100vh;
         touch-action: none;
     }
-
+    
     img {
         display: block;
     }
+
+    h2{
+        font-size: 3.2rem;
+    }
+    /* //default */
+    
 
     /* header */
     header {
@@ -166,7 +173,6 @@
         font-family: "Samsung Sharp Sans";
         font-weight: 300;
     }
-
     /* //search_box */
 
     /* ham_menu */
@@ -294,8 +300,8 @@
     /* main */
     main {
         width: 100%;
-        height: auto;
-        padding: 0 10%;
+        height: 90vh;
+        padding: 2% 12%;
     }
 
     .main_i{
@@ -304,19 +310,27 @@
     }
     
     .main_i .banner_frame{
-        flex: 6;
+        flex: 7;
     }
     
     .main_i .explain_wrap{
-        flex: 4;
+        flex: 3;
     }
     
-
     .main_i .banner_frame img{
         width: 100%;
     }
 
-    .main_i .banner_frame li:not(:first-child) {
+    .main_i .explain_wrap{
+        width: 100%;
+        height: 100%;
+        padding: 5px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main_i .banner_frame .bnr_rolling li:not(:first-child) {
         display: none;
     }
 
@@ -324,8 +338,15 @@
         display: none;
     }
     
-    .main_i .banner_explain .banner_simg ul li:not(:first-child) {
-        display: none;
+    .main_i .explain_wrap .banner_simg ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+    }
+    
+    .main_i .explain_wrap .banner_simg ul li img{
+        width: 100%;
     }
 
     /* //main */
@@ -342,5 +363,4 @@
         width: 100px;
         height: 100px;
     }
-
     /*  //New */
