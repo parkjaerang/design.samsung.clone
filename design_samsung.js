@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
         mainmenu.classList.add("hide");
         document.body.classList.add("no-scroll");
     });
-    
+
     // X click => box close
     exit.forEach(x => {
         x.addEventListener("click", () => {
@@ -42,33 +42,52 @@ window.addEventListener("DOMContentLoaded", () => {
             li.classList.add("zoom");
         }),
 
-        li.addEventListener("mouseout", () => {
-            li.classList.remove("zoom");
-        })
+            li.addEventListener("mouseout", () => {
+                li.classList.remove("zoom");
+            })
     });
 
     //banner preview mouseover => overlay add  active class
     preview_overlay.forEach(li => {
-        li.addEventListener("mouseover",() => {
+        li.addEventListener("mouseover", () => {
             li.classList.add("active");
         }),
-        
-        li.addEventListener("mouseout",() => {
-            li.classList.remove("active");
-        });
+
+            li.addEventListener("mouseout", () => {
+                li.classList.remove("active");
+            });
     })
 
     //banner preview mouseover => list zoom in/out
     preview_list.forEach(li => {
-        li.addEventListener("mouseover",() => {
+        li.addEventListener("mouseover", () => {
             li.classList.add("mouseover");
             li.classList.remove("mouseout");
         }),
-        
-        li.addEventListener("mouseout",() => {
-            li.classList.remove("mouseover");
-            li.classList.add("mouseout");
-        });
+
+            li.addEventListener("mouseout", () => {
+                li.classList.remove("mouseover");
+                li.classList.add("mouseout");
+            });
     })
 
+    //story article img slide / zoom
+    const story_imgs = document.querySelectorAll(".story .stories article img");
+
+    const options = {
+        threshold: 0.2
+    };
+
+    const img_slide = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("slide");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    story_imgs.forEach(img => {
+        img_slide.observe(img);
+    });
 });
