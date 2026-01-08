@@ -57,6 +57,17 @@
 
     h2 {
         font-size: 3.2rem;
+        font-weight: 900;
+    }
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 3.8rem;
+        font-family: "Samsung Sharp Sans bold";
     }
 
     .tag {
@@ -65,10 +76,12 @@
         border: none;
         border-radius: 999px;
         padding: 8px 16px;
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 600;
         cursor: pointer;
-        margin-right: 5px;
+        margin-right: 0 3px;
+        font-family: "Samsung Sharp Sans bold";
+        letter-spacing: 0.1rem;
     }
 
     /* //default */
@@ -76,12 +89,16 @@
 
     /* header */
     header {
+        position: fixed;
         width: 100%;
         height: auto;
-        padding: 30px 50px;
+        padding: 20px 30px;
+        background-color: #fff;
+        z-index: 1200;
     }
 
     header h1 {
+        width: 10%;
         position: relative;
         z-index: 1000;
     }
@@ -117,6 +134,11 @@
     }
 
     /* search_box */
+    header .header_i .search_icon,
+    header .header_i .menu_icon {
+        width: 22%;
+    }
+
     header .header_i .search_box {
         width: 100vw;
         height: 40vh;
@@ -317,7 +339,7 @@
     main {
         width: 100%;
         height: 90vh;
-        padding: 2% 12%;
+        padding: 8% 12% 45% 12%;
     }
 
     .main_i {
@@ -326,6 +348,7 @@
         display: flex;
         justify-content: space-between;
         gap: 20px;
+        align-items: stretch;
     }
 
     .main_i .banner_frame {
@@ -334,11 +357,17 @@
 
     .main_i .explain_wrap {
         height: auto;
-        padding: 20px;
+        padding: 5px 20px 20px 20px;
         flex: 3;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .main_i .explain_wrap .KV {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     .main_i .explain_wrap .banner_preview ul {
@@ -347,19 +376,24 @@
         gap: 5px;
     }
 
-    .main_i .explain_wrap .banner_preview ul li{
+    .main_i .explain_wrap .banner_preview ul li {
         flex: 1;
         position: relative;
         z-index: 1;
     }
-    
-    .main_i .explain_wrap .banner_preview ul li:hover {
+
+    .main_i .explain_wrap .banner_preview ul li.mouseover {
         z-index: 10;
-        transform: scale(1.5);
-        transition: .5s;
+        transform: scale(1.4);
+        transition: .5s ease-in-out;
     }
 
-    .main_i .explain_wrap .banner_preview ul li .overlay{
+    .main_i .explain_wrap .banner_preview ul li.mouseout {
+        transform: scale(1);
+        transition: .5s ease-in-out;
+    }
+
+    .main_i .explain_wrap .banner_preview ul li .overlay {
         opacity: 1;
         width: 100%;
         height: 100%;
@@ -371,11 +405,11 @@
         align-content: center;
     }
 
-    .main_i .explain_wrap .banner_preview ul li .overlay.active{
+    .main_i .explain_wrap .banner_preview ul li .overlay.active {
         opacity: 0;
         cursor: pointer;
     }
-    
+
     .main_i .banner_frame .bnr_rolling li:not(:first-child) {
         display: none;
     }
@@ -383,21 +417,146 @@
     .main_i .banner_explain .KV:not(:first-child) {
         display: none;
     }
-
     /* //main */
 
-    /* story */
-    .story .stories article img {
-        width: 100px;
-        height: 100px;
+    /* Explore */
+    .explore {
+        width: 100%;
+        height: auto;
+        padding: 8% 0;
     }
 
+    .explore .section_header{
+        width: 75%;
+        margin: 0 auto;
+        padding: 2% 0;
+        display: flex;
+        justify-content: space-between;
+        align-content: end;
+    }
+    
+    .explore .section_header h3{
+        font-family: "Samsung Sharp Sans medium";
+        font-weight: 400;
+        font-size: 4.2rem;
+    }
+    
+    .explore .section_header p{
+        font-family: "Samsung Sharp Sans medium";
+        font-weight: 500;
+        font-size: 1.6rem;        
+        align-content: end;
+    }
+    /* //Explore */
+
+    /* story */
+    .story {
+        width: 75%;
+        height: auto;
+        padding: 8% 0;
+        margin: 0 auto;
+    }
+
+    .story .section_header{
+        width: 100%;
+        padding: 2% 0;
+        display: flex;
+        justify-content: space-between;
+        align-content: end;
+    }
+    
+    .story .section_header h3{
+        font-family: "Samsung Sharp Sans medium";
+        font-weight: 400;
+        font-size: 4.2rem;
+    }
+    
+    .story .section_header p{
+        font-family: "Samsung Sharp Sans medium";
+        font-weight: 500;
+        font-size: 1.6rem;        
+        align-content: end;
+    }
+    
+    .story .stories{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 100px 30px;
+    }
+    
+    .story .stories article img{
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .story .stories article h6{
+        font-family: "Samsung Sharp Sans";
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 16px 0;
+    }
+    
+    .story .stories article h3{
+        font-family: "Samsung Sharp Sans bold";
+        font-weight: 500;
+        font-size: 2.8rem;
+    }
+
+    .story .stories article p{
+        font-family: "Samsung Sharp Sans";
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 16px 0;
+    }
+
+    .story .stories article .tag{
+        padding: 6px 12px;
+        font-size: 1.2rem;
+    }
+    
     /* //story */
 
+
     /*  New */
-    .news .news_box img {
-        width: 100px;
-        height: 100px;
+    .news {
+        width: 100%;
+        height: auto;
+        padding: 8% 0;
+        margin: 0 auto;
+        background-color: #EDEDED;
+    }
+    
+    .news .section_header{
+        width: 75%;
+        margin: 0 auto;
+        padding: 2% 0;
+        display: flex;
+        justify-content: space-between;
+        align-content: end;
+    }
+    
+    .news .section_header h3{
+        font-family: "Samsung Sharp Sans medium";
+        font-weight: 400;
+        font-size: 4.2rem;
+    }
+    
+    .news .section_header p{
+        font-family: "Samsung Sharp Sans medium";
+        font-weight: 500;
+        font-size: 1.6rem;        
+        align-content: end;
     }
 
+    .news .news_box {
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+
+    }
+
+    .news .news_box img {
+        width: 100%;
+        height: auto;
+    }
     /*  //New */
