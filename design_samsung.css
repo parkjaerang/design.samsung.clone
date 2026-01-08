@@ -40,7 +40,6 @@
     html {
         font-size: 62.5%;
         font-family: 'Samsung Sharp Sans';
-
     }
 
     body.no-scroll {
@@ -85,7 +84,6 @@
     }
 
     /* //default */
-
 
     /* header */
     header {
@@ -417,7 +415,20 @@
     .main_i .banner_explain .KV:not(:first-child) {
         display: none;
     }
+
     /* //main */
+
+    /* video_box */
+    .video_box {
+        width: 100%;
+    }
+
+    .video_box video {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    /* //video_box */
 
     /* Explore */
     .explore {
@@ -426,7 +437,7 @@
         padding: 8% 0;
     }
 
-    .explore .section_header{
+    .explore .section_header {
         width: 75%;
         margin: 0 auto;
         padding: 2% 0;
@@ -434,19 +445,20 @@
         justify-content: space-between;
         align-content: end;
     }
-    
-    .explore .section_header h3{
+
+    .explore .section_header h3 {
         font-family: "Samsung Sharp Sans medium";
         font-weight: 400;
         font-size: 4.2rem;
     }
-    
-    .explore .section_header p{
+
+    .explore .section_header p {
         font-family: "Samsung Sharp Sans medium";
         font-weight: 500;
-        font-size: 1.6rem;        
+        font-size: 1.6rem;
         align-content: end;
     }
+
     /* //Explore */
 
     /* story */
@@ -457,63 +469,63 @@
         margin: 0 auto;
     }
 
-    .story .section_header{
+    .story .section_header {
         width: 100%;
         padding: 2% 0;
         display: flex;
         justify-content: space-between;
         align-content: end;
     }
-    
-    .story .section_header h3{
+
+    .story .section_header h3 {
         font-family: "Samsung Sharp Sans medium";
         font-weight: 400;
         font-size: 4.2rem;
     }
-    
-    .story .section_header p{
+
+    .story .section_header p {
         font-family: "Samsung Sharp Sans medium";
         font-weight: 500;
-        font-size: 1.6rem;        
+        font-size: 1.6rem;
         align-content: end;
     }
-    
-    .story .stories{
+
+    .story .stories {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 100px 30px;
     }
-    
-    .story .stories article img{
+
+    .story .stories article img {
         max-width: 100%;
         height: auto;
     }
-    
-    .story .stories article h6{
+
+    .story .stories article h6 {
         font-family: "Samsung Sharp Sans";
         font-size: 1.6rem;
         font-weight: 500;
         padding: 16px 0;
     }
-    
-    .story .stories article h3{
+
+    .story .stories article h3 {
         font-family: "Samsung Sharp Sans bold";
         font-weight: 500;
         font-size: 2.8rem;
     }
 
-    .story .stories article p{
+    .story .stories article p {
         font-family: "Samsung Sharp Sans";
         font-size: 1.2rem;
         font-weight: 500;
         padding: 16px 0;
     }
 
-    .story .stories article .tag{
+    .story .stories article .tag {
         padding: 6px 12px;
         font-size: 1.2rem;
     }
-    
+
     /* //story */
 
 
@@ -525,8 +537,8 @@
         margin: 0 auto;
         background-color: #EDEDED;
     }
-    
-    .news .section_header{
+
+    .news .section_header {
         width: 75%;
         margin: 0 auto;
         padding: 2% 0;
@@ -534,17 +546,17 @@
         justify-content: space-between;
         align-content: end;
     }
-    
-    .news .section_header h3{
+
+    .news .section_header h3 {
         font-family: "Samsung Sharp Sans medium";
         font-weight: 400;
         font-size: 4.2rem;
     }
-    
-    .news .section_header p{
+
+    .news .section_header p {
         font-family: "Samsung Sharp Sans medium";
         font-weight: 500;
-        font-size: 1.6rem;        
+        font-size: 1.6rem;
         align-content: end;
     }
 
@@ -559,4 +571,54 @@
         width: 100%;
         height: auto;
     }
+
     /*  //New */
+
+    /* footer */
+    footer {
+        width: 100%;
+        padding: 10px 5%;
+    }
+
+    footer p {
+        text-align: end;
+        color: #918A8A;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    footer .f_bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    footer .f_bottom .f_left ul {
+        display: flex;
+    }
+
+    footer .f_bottom .f_left ul li {
+        font-family: "Samsung Sharp Sans medium";
+        position: relative;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    footer .f_bottom .f_left ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 1.6rem;
+        background: #000;
+    }
+
+    footer .f_bottom .f_left ul li:first-child::before {
+        content: none;
+    }
+
+    /* //footer */
