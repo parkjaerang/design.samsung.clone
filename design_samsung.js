@@ -7,7 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const exit = document.querySelectorAll(".exit");
     const mainmenu = document.querySelector(".header_i nav");
     const menu_list = document.querySelectorAll(".menu_m li");
-    const preview = document.querySelectorAll(".banner_preview ul li .overlay");
+    const preview_overlay = document.querySelectorAll(".banner_preview ul li .overlay");
+    const preview_list = document.querySelectorAll(".banner_preview ul li");
 
     // search click => searchbox open
     search_icon.addEventListener("click", () => {
@@ -47,14 +48,27 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     //banner preview mouseover => overlay add  active class
-    preview.forEach(li => {
+    preview_overlay.forEach(li => {
         li.addEventListener("mouseover",() => {
             li.classList.add("active");
         }),
-
+        
         li.addEventListener("mouseout",() => {
             li.classList.remove("active");
         });
     })
-    
+
+    //banner preview mouseover => list zoom in/out
+    preview_list.forEach(li => {
+        li.addEventListener("mouseover",() => {
+            li.classList.add("mouseover");
+            li.classList.remove("mouseout");
+        }),
+        
+        li.addEventListener("mouseout",() => {
+            li.classList.remove("mouseover");
+            li.classList.add("mouseout");
+        });
+    })
+
 });
