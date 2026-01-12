@@ -55,18 +55,14 @@
     }
 
     h2 {
-        font-size: 3.2rem;
+        font-size: 3.6rem;
         font-weight: 900;
+        font-family: "Samsung Sharp Sans bold";
     }
 
     h4 {
         font-size: 2rem;
         font-weight: 500;
-    }
-
-    h2 {
-        font-size: 3.8rem;
-        font-family: "Samsung Sharp Sans bold";
     }
 
     .tag {
@@ -351,6 +347,25 @@
 
     .main_i .banner_frame {
         flex: 7;
+        overflow: hidden;
+    }
+
+
+    .main_i .banner_frame .bnr_rolling {
+        display: flex;
+        width: 500%;
+        transition: transform .5s;
+        transform: translateX(0);
+    }
+
+
+    .main_i .banner_frame .bnr_rolling li {
+        flex: 0 0 20%;
+    }
+
+    .main_i .banner_frame .bnr_rolling li img {
+        width: 100%;
+        display: block;
     }
 
     .main_i .explain_wrap {
@@ -408,12 +423,12 @@
         cursor: pointer;
     }
 
-    .main_i .banner_frame .bnr_rolling li:not(:first-child) {
+    .main_i .banner_explain .KV {
         display: none;
     }
 
-    .main_i .banner_explain .KV:not(:first-child) {
-        display: none;
+    .main_i .banner_explain .KV.active {
+        display: flex;
     }
 
     /* //main */
@@ -428,6 +443,7 @@
         width: 100%;
         height: auto;
     }
+
     /* //video_box */
 
     /* Explore */
@@ -435,6 +451,7 @@
         width: 100%;
         height: auto;
         padding: 8% 0;
+        overflow: hidden;
     }
 
     .explore .section_header {
@@ -458,6 +475,15 @@
         font-size: 1.6rem;
         align-content: end;
     }
+
+    .explore .tag_list_top,
+    .explore .tag_list_bottom {
+        width: 200vw;
+        display: flex;
+        gap: 20px;
+    }
+
+
 
     /* //Explore */
 
@@ -497,8 +523,18 @@
     }
 
     .story .stories article img {
+        position: relative;
         max-width: 100%;
         height: auto;
+        overflow: hidden;
+        opacity: 0;
+        top: 40px;
+        transition: .5s;
+    }
+
+    .story .stories article img.slide {
+        opacity: 1;
+        top: 0px;
     }
 
     .story .stories article h6 {
