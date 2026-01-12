@@ -1,377 +1,114 @@
-<!DOCTYPE html>
-<html lang="ko">
+window.addEventListener("DOMContentLoaded", () => {
+    //variable definition
+    const search_box = document.querySelector(".search_box");
+    const search_icon = document.querySelector(".search_icon");
+    const ham_menu = document.querySelector(".ham_menu");
+    const menu_icon = document.querySelector(".menu_icon");
+    const exit = document.querySelectorAll(".exit");
+    const mainmenu = document.querySelector(".header_i nav");
+    const menu_list = document.querySelectorAll(".menu_m li");
+    const preview_overlay = document.querySelectorAll(".banner_preview ul li .overlay");
+    const preview_list = document.querySelectorAll(".banner_preview ul li");
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samsung Design Website</title>
-    <script src="https://kit.fontawesome.com/2eb47fcd7e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./design_samsung.css">
-    <script src="./design_samsung.js"></script>
-</head>
+    // search click => searchbox open
+    search_icon.addEventListener("click", () => {
+        ham_menu.classList.remove("show");
+        search_box.classList.add("show");
+        mainmenu.classList.add("hide");
+        document.body.classList.add("no-scroll");
+    });
 
-<body>
-    <!-- https://www.design.samsung.com/kr/main/ -->
+    // menu click => menubox open
+    menu_icon.addEventListener("click", () => {
+        ham_menu.classList.add("show");
+        search_box.classList.remove("show");
+        mainmenu.classList.add("hide");
+        document.body.classList.add("no-scroll");
+    });
 
-    <!-- header -->
-    <header>
-        <div class="header_i">
-            <h1><a href="./index.html"><img src="./img/header-logo-samsung-design-svg.svg" alt="삼성디자인 로고"></a></h1>
-            <nav><img src="./img/header-search-icn2025.svg" alt="검색" class="search_icon"><img src="./img/hambar.png"
-                    alt="메뉴바" class="menu_icon"></nav>
-            <div class="search_box">
-                <div class="search_t">
-                    <i class="fa-solid fa-x exit"></i>
-                </div>
-                <div class="search_m">
-                    <input type="search" placeholder="Search"><img src="./img/header-search-icn2025.svg" alt="검색"
-                        class="search_icon">
-                </div>
-                <div class="search_b">
-                    <nav>
-                        <ul>
-                            <li><a href="#">Galaxy XR</a></li>
-                            <li><a href="#">AI</a></li>
-                            <li><a href="#">The Movingstyle</a></li>
-                            <li><a href="#">Bespoke</a></li>
-                            <li><a href="#">UX</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div class="ham_menu">
-                <div class="menu_t">
-                    <i class="fa-solid fa-x exit"></i>
-                </div>
-                <div class="menu_m">
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Story</a></li>
-                        <li><a href="#">News</a></li>
-                    </ul>
-                </div>
-                <div class="menu_b">
-                    <div class="lang">
-                        <ul>
-                            <li><a href="#">Kr</a></li>
-                            <li><span></span></li>
-                            <li><a href="#">En</a></li>
-                        </ul>
-                    </div>
-                    <div class="insta"><img src="./img/header-instagram-icn2025.svg" alt="instagram">
-                        <p>instagram</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- //header -->
+    // X click => box close
+    exit.forEach(x => {
+        x.addEventListener("click", () => {
+            search_box.classList.remove("show");
+            ham_menu.classList.remove("show");
+            mainmenu.classList.remove("hide");
+            document.body.classList.remove("no-scroll");
+        });
+    });
 
-    <!-- main -->
-    <main>
-        <div class="main_i">
-            <div class="banner_frame">
-                <ul class="bnr_rolling">
-                    <li><img src="./img/main_head_banner_webp1.webp" alt="메인 베너"></li>
-                    <li><img src="./img/Season_greeting_2025_main.jpeg" alt="메인 베너"></li>
-                    <li><img src="./img/Fortune_02_wobg_pc1.jpg" alt="메인 베너"></li>
-                    <li><img src="./img/KV_01_Renewal-Launching_horizontal1.jpg" alt="메인 베너"></li>
-                    <li><img src="./img/KV_02_Galaxy-XR_horizontal.jpg" alt="메인 베너"></li>
-                </ul>
-            </div>
-            <div class="explain_wrap">
-                <div class="banner_explain">
-                    <div class="KV KV_01">
-                        <h4>삼성 디자인 비전</h4>
-                        <h2><a href="#">The Human Side of Tech</a></h2>
-                        <div class="btn_box">
-                            <button type="button" class="tag">CDO</button>
-                            <button type="button" class="tag">Essay</button>
-                            <button type="button" class="tag">Design Vision</button>
-                        </div>
-                    </div>
-                    <div class="KV KV_02">
-                        <h4>당신의 연말은 어떤 모습인가요?</h4>
-                        <h2><a href="#">What’s Your Holiday Style?</a></h2>
-                        <div class="btn_box">
-                            <button type="button" class="tag">Inspiration</button>
-                            <button type="button" class="tag">Lifestyle</button>
-                        </div>
-                    </div>
-                    <div class="KV KV_03">
-                        <h2><a href="#">포춘 브레인스톰 디자인 2025</a></h2>
-                        <div class="btn_box">
-                            <button type="button" class="tag">CDO</button>
-                            <button type="button" class="tag">News</button>
-                            <button type="button" class="tag">Event</button>
-                        </div>
-                    </div>
-                    <div class="KV KV_04">
-                        <h4>새로워진 삼성 디자인 커뮤니케이션 채널</h4>
-                        <h2><a href="#">Design, Reconnected</a></h2>
-                        <div class="btn_box">
-                            <button type="button" class="tag">Interview</button>
-                            <button type="button" class="tag">Design Vision</button>
-                        </div>
-                    </div>
-                    <div class="KV KV_05">
-                        <h4>갤럭시 XR 디자인 스토리</h4>
-                        <h2><a href="#">The Galaxy Gateway to eXtended Reality</a></h2>
-                        <div class="btn_box">
-                            <button type="button" class="tag">XR</button>
-                            <button type="button" class="tag">Galaxy</button>
-                            <button type="button" class="tag">Wearable</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="banner_preview">
-                    <ul>
-                        <li><img src="./img/main_head_thumbnail_webp.webp" alt="KV_01_Renewal">
-                            <div class="overlay"></div>
-                        </li>
-                        <li><img src="./img/2.Mobile4.jpg" alt="KV_02_Mobile4">
-                            <div class="overlay"></div>
-                        </li>
-                        <li><img src="./img/Fortune_02_wobg_mo2.jpg" alt="KV_03_Fortune_02_wobg_mo2">
-                            <div class="overlay"></div>
-                        </li>
-                        <li><img src="./img/KV_01_Renewal-Launching_vertical.jpg" alt="KV_04_Renewal-Launching">
-                            <div class="overlay"></div>
-                        </li>
-                        <li><img src="./img/KV_02_Galaxy-XR_vertical.jpg" alt="KV_05_Galaxy-XR">
-                            <div class="overlay"></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
-    <!-- //main -->
+    // ham_menu li mouseover => zoom
+    menu_list.forEach(li => {
+        li.addEventListener("mouseover", () => {
+            li.classList.add("zoom");
+        }),
 
-    <!-- videoBox -->
-    <section class="video_box">
-        <video src="./video/Design Samsung_renewal_short_1920x700_V4_30fps.mp4" muted autoplay loop></video>
-    </section>
-    <!-- //videoBox -->
+            li.addEventListener("mouseout", () => {
+                li.classList.remove("zoom");
+            })
+    });
 
-    <!-- Explore -->
-    <section class="explore">
-        <div class="section_header">
-            <h3>Explore</h3>
-            <p><a href="#">More</a><i class="fa-solid fa-angle-right"></i></p>
-        </div>
-        <div class="tag_list">
-            <div class="tag_list_top">
-                <button type="button" class="tag">Advanced Design</button>
-                <button type="button" class="tag">AI</button>
-                <button type="button" class="tag">Appliance</button>
-                <button type="button" class="tag">Audio</button>
-                <button type="button" class="tag">Award</button>
-                <button type="button" class="tag">Bespoke</button>
-                <button type="button" class="tag">Branding</button>
-                <button type="button" class="tag">Campaign</button>
-                <button type="button" class="tag">Career</button>
-                <button type="button" class="tag">CMF</button>
-                <button type="button" class="tag">Collaboration</button>
-                <button type="button" class="tag">Computing</button>
-                <button type="button" class="tag">Design Philosophy</button>
-                <button type="button" class="tag">Design Thinking</button>
-                <button type="button" class="tag">Design Vision</button>
-                <button type="button" class="tag">Display</button>
-                <button type="button" class="tag">Essay</button>
-                <button type="button" class="tag">Event</button>
-                <button type="button" class="tag">Exhibition</button>
-                <button type="button" class="tag">Experimental</button>
-            </div>
-            <div class="tag_list_bottom">
-                <button type="button" class="tag">Galaxy</button>
-                <button type="button" class="tag">Interview</button>
-                <button type="button" class="tag">Lifestyle</button>
-                <button type="button" class="tag">Local Design</button>
-                <button type="button" class="tag">Metaverse</button>
-                <button type="button" class="tag">Mobile</button>
-                <button type="button" class="tag">News</button>
-                <button type="button" class="tag">Odyssey</button>
-                <button type="button" class="tag">One UI</button>
-                <button type="button" class="tag">Packaging</button>
-                <button type="button" class="tag">People</button>
-                <button type="button" class="tag">Service</button>
-                <button type="button" class="tag">Social Impact</button>
-                <button type="button" class="tag">Sound</button>
-                <button type="button" class="tag">TV/AV</button>
-                <button type="button" class="tag">UX Writing</button>
-                <button type="button" class="tag">UX/UI</button>
-                <button type="button" class="tag">Visual Graphics</button>
-                <button type="button" class="tag">Wearable</button>
-                <button type="button" class="tag">Workplace Culture</button>
-                <button type="button" class="tag">XR</button>
-            </div>
-        </div>
-    </section>
-    <!-- //Explore -->
+    //banner preview mouseover => overlay add  active class
+    preview_overlay.forEach(li => {
+        li.addEventListener("mouseover", () => {
+            li.classList.add("active");
+        }),
 
-    <!-- Story -->
-    <section class="story">
-        <div class="section_header">
-            <h3>Story</h3>
-            <p><a href="#">More<i class="fa-solid fa-angle-right"></i></a></p>
-        </div>
-        <div class="stories">
-            <article>
-                <img src="./img/img_KV_banner_mobile1.png" alt="story1">
-                <h6>언제나 당신과 함께하는 One UI</h6>
-                <h3>One UI Helps You Live Life Your Way</h3>
-                <p>November 18, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">UX/UI</button>
-                    <button type="button" class="tag">One UI</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/ctgbnr_oneui-xr3.jpg" alt="story2">
-                <h6>One UI XR 디자인 스토리</h6>
-                <h3>The Galaxy Experience into Immersive Space</h3>
-                <p>October 22, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">XR</button>
-                    <button type="button" class="tag">UX/UI</button>
-                    <button type="button" class="tag">One UI</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/ctgbnr_design-career-411.jpg" alt="story3">
-                <h6>삼성전자 신입/경력 채용 디자이너 인터뷰</h6>
-                <h3>Designer’s Journey: From Beginning to Mastery</h3>
-                <p>September 23, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">Interview</button>
-                    <button type="button" class="tag">Career</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/20251030_flex_2.jpg" alt="story4">
-                <h6>One UI 8 플렉스윈도우 월페이퍼 스토리</h6>
-                <h3>Make It Yours: A Canvas for Self Expression</h3>
-                <p>August 7, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">Visual Graphics</button>
-                    <button type="button" class="tag">UX/UI</button>
-                    <button type="button" class="tag">One UI</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/20251030_watch_3.jpg" alt="story5">
-                <h6>갤럭시 워치8 시리즈 디자인 스토리</h6>
-                <h3>Meet the Watch That Thinks Ahead</h3>
-                <p>July 29, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">Wearable</button>
-                    <button type="button" class="tag">Galaxy</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/ctgbnr_bespoke-ai-washer-dryer1.jpg" alt="story6">
-                <h6>Bespoke AI 세탁기/건조기 디자인 스토리</h6>
-                <h3>Calm yet Resonant: Subtle Power in Design</h3>
-                <p>July 17, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">Interview</button>
-                    <button type="button" class="tag">Bespoke</button>
-                    <button type="button" class="tag">Appliance</button>
-                </div>
-            </article>
-        </div>
-    </section>
-    <!-- //Story -->
+            li.addEventListener("mouseout", () => {
+                li.classList.remove("active");
+            });
+    })
 
-    <!-- News -->
-    <section class="news">
-        <div class="section_header">
-            <h3>News</h3>
-            <p><a href="#">More<i class="fa-solid fa-angle-right"></i></a></p>
-        </div>
-        <div class="news_box">
-            <article>
-                <img src="./img/Website_Thumb_.jpg" alt="New1">
-                <h3>포춘 브레인스톰 디자인 2025</h3>
-                <p>December 5, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">News</button>
-                    <button type="button" class="tag">Event</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/20251112_100244_11.jpg" alt="New4">
-                <h3>디자인코리아 2025</h3>
-                <p>November 14, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">News</button>
-                    <button type="button" class="tag">Exhibition</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/News1 KR.jpg" alt="New2">
-                <h3>카림 라시드 · 파비오 노벰브레 세미나 개최</h3>
-                <p>October 2, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">News</button>
-                    <button type="button" class="tag">Event</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/News2 KR.jpg" alt="New3">
-                <h3>2025 IDEA 디자인어워드</h3>
-                <p>September 19, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">News</button>
-                    <button type="button" class="tag">Award</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/News3 KR.jpg" alt="New5">
-                <h3>2025 삼성전자 디자인 오픈 캠퍼스</h3>
-                <p>August 12, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">News</button>
-                    <button type="button" class="tag">Career</button>
-                </div>
-            </article>
-            <article>
-                <img src="./img/News4 KR.jpg" alt="New6">
-                <h3>2025 접근성 페스티벌 위크</h3>
-                <p>May 20, 2025</p>
-                <div class="btn_box">
-                    <button type="button" class="tag">News</button>
-                    <button type="button" class="tag">Event</button>
-                </div>
-            </article>
-        </div>
-    </section>
-    <!-- // News -->
+    //banner preview mouseover => list zoom in/out
+    preview_list.forEach(li => {
+        li.addEventListener("mouseover", () => {
+            li.classList.add("mouseover");
+            li.classList.remove("mouseout");
+        }),
 
-    <!-- footer -->
-    <footer>
-        <p>* 이 페이지에는 AI 툴의 도움으로 생성된 이미지가 일부 포함되어 있습니다.</p>
-        <div class="f_bottom">
-            <div class="f_left">
-                <ul>
-                    <li><a href="#">© 2025 Samsung All Rights Reserved.</a></li>
-                    <li><a href="#">이메일 문의</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                </ul>
-            </div>
-            <div class="f_right">
-                <div class="site_nav">
-                    <div class="default">Family Site</button>
-                    <ul>
-                        <li><a href="#">Samsung.com</a></li>
-                        <li><a href="#">Samsung Newsroom</a></li>
-                        <li><a href="#">Samsung Careers</a></li>
-                    </ul>
-                </div>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-        </div>
-    </footer>
-    <!-- //footer -->
-</body>
+            li.addEventListener("mouseout", () => {
+                li.classList.remove("mouseover");
+                li.classList.add("mouseout");
+            });
+    })
+
+    //story article img slide / zoom
+    const story_imgs = document.querySelectorAll(".story .stories article img");
+
+    const options = {
+        threshold: 0.2
+    };
+
+    const img_slide = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("slide");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    story_imgs.forEach(img => {
+        img_slide.observe(img);
+    });
+
+    //rolling banner
+    const rolling = document.querySelector(".banner_frame .bnr_rolling");
+    const banner_explain = document.querySelectorAll(".banner_explain .KV");
+    const banner_preview = document.querySelectorAll(".banner_preview > ul > li");
+
+    function showSlide(index) {
+        rolling.style.transform = `translateX(-${index * 20}%)`;
+
+        banner_explain.forEach(kv => kv.classList.remove("active"));
+        banner_explain[index].classList.add("active");
+    }
+
+    banner_preview.forEach((pre, index) => {
+        pre.addEventListener("click", () => showSlide(index));
+    });
+
+
+    showSlide(0);
+
+
+});
