@@ -91,19 +91,17 @@ window.addEventListener("DOMContentLoaded", () => {
         img_slide.observe(img);
     });
 
-    //rolling banner
+    // main rolling banner
     const rolling = document.querySelector(".banner_frame .bnr_rolling");
     const banner_explain = document.querySelectorAll(".banner_explain .KV");
-    const banner_preview = document.querySelectorAll(".banner_preview > ul > li");
 
     function showSlide(index) {
         rolling.style.transform = `translateX(-${index * 20}%)`;
-
         banner_explain.forEach(kv => kv.classList.remove("active"));
         banner_explain[index].classList.add("active");
     }
 
-    banner_preview.forEach((pre, index) => {
+    preview_list.forEach((pre, index) => {
         pre.addEventListener("click", () => showSlide(index));
     });
 
