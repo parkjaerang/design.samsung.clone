@@ -55,7 +55,7 @@
     }
 
     h2 {
-        font-size: 3.6rem;
+        font-size: 5.6rem;
         font-weight: 900;
         font-family: "Samsung Sharp Sans bold";
     }
@@ -70,15 +70,12 @@
         color: #fff;
         border: none;
         border-radius: 999px;
-        padding: 8px 16px;
-        font-size: 1.4rem;
         font-weight: 600;
         cursor: pointer;
         margin-right: 0 3px;
         font-family: "Samsung Sharp Sans bold";
         letter-spacing: 0.1rem;
     }
-
     /* //default */
 
     /* header */
@@ -341,7 +338,7 @@
         height: auto;
         display: flex;
         justify-content: space-between;
-        gap: 20px;
+        gap: 10px;
         align-items: stretch;
     }
 
@@ -382,6 +379,11 @@
         flex-direction: column;
         gap: 30px;
     }
+    
+    .main_i .explain_wrap .KV .btn_box .tag{
+        font-size: 2rem;
+        padding: 10px 16px;
+    }
 
     .main_i .explain_wrap .banner_preview ul {
         width: 100%;
@@ -418,6 +420,10 @@
         align-content: center;
     }
 
+    .banner_preview ul li .overlay.hover {
+        opacity: 0;
+    }
+
     .main_i .explain_wrap .banner_preview ul li .overlay.active {
         opacity: 0;
         cursor: pointer;
@@ -426,11 +432,15 @@
     .main_i .banner_explain .KV {
         display: none;
     }
-
+    
     .main_i .banner_explain .KV.active {
         display: flex;
     }
-
+    
+    .main_i .banner_explain .KV .btn_box{
+        display: flex;
+        gap: clamp(3px, 1.5vw, 5px);
+    }
     /* //main */
 
     /* video_box */
@@ -476,15 +486,24 @@
         align-content: end;
     }
 
+    .explore .tag_list{
+        width: 500%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .explore .tag_list .tag{
+        padding: 20px 24px;
+        font-size: 5.6rem;
+    }
+
     .explore .tag_list_top,
     .explore .tag_list_bottom {
-        width: 200vw;
         display: flex;
         gap: 20px;
     }
-
-
-
     /* //Explore */
 
     /* story */
@@ -558,12 +577,11 @@
     }
 
     .story .stories article .tag {
-        padding: 6px 12px;
-        font-size: 1.2rem;
+        padding: 8px 12px;
+        font-size: 1.6rem;
     }
 
     /* //story */
-
 
     /*  New */
     .news {
@@ -599,15 +617,32 @@
     .news .news_box {
         width: 75%;
         margin: 0 auto;
+    }
+    
+    .news .news_box .news_box_list{
+        width: 200%;
         display: flex;
-
+        gap: 40px;
     }
 
-    .news .news_box img {
+    .news .news_box .news_box_list article{
+        flex: 1;
+    }
+
+    .news .news_box .news_box_list article img {
         width: 100%;
         height: auto;
     }
 
+    .news .news_box .news_box_list article .btn_box{
+        display: flex;
+        gap: 8px;
+    }
+
+    .news .news_box .news_box_list article .btn_box .tag{
+        padding: 8px 12px;
+        font-size: 1.6rem;
+    }
     /*  //New */
 
     /* footer */
