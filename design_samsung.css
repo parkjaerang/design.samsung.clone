@@ -54,17 +54,6 @@
         height: 100%;
     }
 
-    h2 {
-        font-size: 5.6rem;
-        font-weight: 900;
-        font-family: "Samsung Sharp Sans bold";
-    }
-
-    h4 {
-        font-size: 2rem;
-        font-weight: 500;
-    }
-
     .tag {
         background-color: #000;
         color: #fff;
@@ -76,6 +65,7 @@
         font-family: "Samsung Sharp Sans bold";
         letter-spacing: 0.1rem;
     }
+
     /* //default */
 
     /* header */
@@ -379,10 +369,21 @@
         flex-direction: column;
         gap: 30px;
     }
-    
-    .main_i .explain_wrap .KV .btn_box .tag{
+
+    .main_i .explain_wrap .KV h2 {
+        font-size: 5.4rem;
+        font-weight: 700;
+        font-family: "Samsung Sharp Sans bold";
+    }
+
+    .main_i .explain_wrap .KV h4 {
+        font-size: 2.8rem;
+        font-weight: 500;
+    }
+
+    .main_i .explain_wrap .KV .btn_box .tag {
         font-size: 2rem;
-        padding: 10px 16px;
+        padding: 8px 16px;
     }
 
     .main_i .explain_wrap .banner_preview ul {
@@ -405,7 +406,7 @@
 
     .main_i .explain_wrap .banner_preview ul li.mouseout {
         transform: scale(1);
-        transition: .5s ease-in-out;
+        transition: 1s ease-in-out;
     }
 
     .main_i .explain_wrap .banner_preview ul li .overlay {
@@ -432,15 +433,16 @@
     .main_i .banner_explain .KV {
         display: none;
     }
-    
+
     .main_i .banner_explain .KV.active {
         display: flex;
     }
-    
-    .main_i .banner_explain .KV .btn_box{
+
+    .main_i .banner_explain .KV .btn_box {
         display: flex;
-        gap: clamp(3px, 1.5vw, 5px);
+        gap: 5px;
     }
+
     /* //main */
 
     /* video_box */
@@ -486,15 +488,15 @@
         align-content: end;
     }
 
-    .explore .tag_list{
+    .explore .tag_list {
         width: 500%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    
-    .explore .tag_list .tag{
+
+    .explore .tag_list .tag {
         padding: 20px 24px;
         font-size: 5.6rem;
     }
@@ -504,6 +506,7 @@
         display: flex;
         gap: 20px;
     }
+
     /* //Explore */
 
     /* story */
@@ -585,6 +588,7 @@
 
     /*  New */
     .news {
+        position: relative;
         width: 100%;
         height: auto;
         padding: 8% 0;
@@ -617,15 +621,16 @@
     .news .news_box {
         width: 75%;
         margin: 0 auto;
+        overflow: hidden;
     }
-    
-    .news .news_box .news_box_list{
+
+    .news .news_box .news_box_list {
         width: 200%;
         display: flex;
         gap: 40px;
     }
 
-    .news .news_box .news_box_list article{
+    .news .news_box .news_box_list article {
         flex: 1;
     }
 
@@ -634,14 +639,44 @@
         height: auto;
     }
 
-    .news .news_box .news_box_list article .btn_box{
+    .news .news_box .news_box_list article .btn_box {
         display: flex;
         gap: 8px;
     }
 
-    .news .news_box .news_box_list article .btn_box .tag{
+    .news .news_box .news_box_list article .btn_box .tag {
         padding: 8px 12px;
         font-size: 1.6rem;
+    }
+
+    .news .news_box .news_box_list article h3 {
+        font-family: "Samsung Sharp Sans bold";
+        font-size: 2.6rem;
+        font-weight: 700;
+    }
+
+    .news .l_arrow i,
+    .news .r_arrow i {
+        width: 100px;
+        height: 100px;
+        padding: 20%;
+        background-color: #FFFFFF;
+        font-size: 3rem;
+        border: 0.2px solid #DDDDDD;
+        text-align: center;
+        align-content: center;
+    }
+
+    .news .l_arrow {
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+
+    .news .r_arrow {
+        position: absolute;
+        top: 50%;
+        right: 0;
     }
     /*  //New */
 
@@ -691,5 +726,4 @@
     footer .f_bottom .f_left ul li:first-child::before {
         content: none;
     }
-
     /* //footer */
