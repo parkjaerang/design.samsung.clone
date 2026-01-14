@@ -105,8 +105,18 @@ window.addEventListener("DOMContentLoaded", () => {
         pre.addEventListener("click", () => showSlide(index));
     });
 
-
     showSlide(0);
 
+    // arrow direction change
+    const nav = document.querySelector('.site_nav');
+    const btn = document.querySelector('.family_btn');
 
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nav.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+        nav.classList.remove('active');
+    });
 });
